@@ -12,8 +12,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
-from dotenv import load_dotenv
-load_dotenv()
+from decouple import config
+
 
 SECRET_KEY = os.getenv('^#0@2#58fsi76c!*862x8qf_od+++g05m$!0@yjwtp(#^*)uo+')
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
@@ -64,6 +64,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
+    "https://my-frontend-website.vercel.app/",
     "http://localhost:3000",
 ]
 
